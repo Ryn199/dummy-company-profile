@@ -16,6 +16,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminArticleController;
 use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminProductController;
+use App\Http\Controllers\Admin\AdminClientController;
+use App\Http\Controllers\Admin\AdminGalleryController;
 
 // FRONTEND ROUTES
 
@@ -51,20 +53,13 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     // NEXT CRUD
 
-
-    // nanti lanjut:
     Route::resource('articles', AdminArticleController::class);
     Route::resource('products', AdminProductController::class);
     Route::resource('events', AdminEventController::class);
-    // Route::resource('clients', AdminClientController::class);
-    // Route::resource('galleries', AdminGalleryController::class);
-
+    Route::resource('clients', AdminClientController::class);
+    Route::resource('galleries', AdminGalleryController::class);
 });
 
-/*
-|--------------------------------------------------------------------------
-| AUTH ROUTES (Laravel Breeze)
-|--------------------------------------------------------------------------
-*/
 
+// AUTH ROUTES (Laravel Breeze)
 require __DIR__ . '/auth.php';

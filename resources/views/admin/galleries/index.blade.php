@@ -6,18 +6,18 @@
         <div>
 
             <h1 class="text-4xl font-bold text-slate-800">
-                Clients
+                Gallery
             </h1>
 
             <p class="text-gray-500 mt-2">
-                Manage all company clients
+                Manage company gallery images
             </p>
 
         </div>
 
-        <a href="/admin/clients/create" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl">
+        <a href="/admin/galleries/create" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl">
 
-            Add Client
+            Add Gallery Image
 
         </a>
 
@@ -37,8 +37,8 @@
 
                 <tr>
 
-                    <th class="text-left p-5">Logo</th>
-                    <th class="text-left p-5">Name</th>
+                    <th class="text-left p-5">Image</th>
+                    <th class="text-left p-5">Title</th>
                     <th class="text-left p-5">Action</th>
 
                 </tr>
@@ -47,36 +47,36 @@
 
             <tbody>
 
-                @foreach ($clients as $client)
+                @foreach ($galleries as $gallery)
                     <tr class="border-t">
 
                         <td class="p-5">
 
-                            <img src="{{ asset('storage/' . $client->logo) }}" class="w-32 h-20 object-cover rounded-xl">
+                            <img src="{{ asset('storage/' . $gallery->image) }}" class="w-24 h-24 object-cover rounded-xl">
 
                         </td>
 
                         <td class="p-5 font-semibold">
-                            {{ $client->name }}
+                            {{ $gallery->title ?? 'No Title' }}
                         </td>
 
                         <td class="p-5">
 
                             <div class="flex gap-3">
 
-                                <a href="/admin/clients/{{ $client->id }}/edit"
+                                <a href="/admin/galleries/{{ $gallery->id }}/edit"
                                     class="bg-yellow-400 px-4 py-2 rounded-lg">
 
                                     Edit
 
                                 </a>
 
-                                <form action="/admin/clients/{{ $client->id }}" method="POST">
+                                <form action="/admin/galleries/{{ $gallery->id }}" method="POST">
 
                                     @csrf
                                     @method('DELETE')
 
-                                    <button onclick="return confirm('Delete client?')"
+                                    <button onclick="return confirm('Delete gallery image?')"
                                         class="bg-red-500 text-white px-4 py-2 rounded-lg">
 
                                         Delete
@@ -99,6 +99,6 @@
     </div>
 
     <div class="mt-8">
-        {{ $clients->links() }}
+        {{ $galleries->links() }}
     </div>
 @endsection

@@ -4,10 +4,10 @@
     <div class="max-w-4xl">
 
         <h1 class="text-4xl font-bold mb-10">
-            Edit Client
+            Edit Gallery Image
         </h1>
 
-        <form action="/admin/clients/{{ $client->id }}" method="POST" enctype="multipart/form-data"
+        <form action="/admin/galleries/{{ $gallery->id }}" method="POST" enctype="multipart/form-data"
             class="bg-white rounded-3xl shadow p-10 space-y-6">
 
             @csrf
@@ -16,28 +16,28 @@
             <div>
 
                 <label class="font-semibold block mb-2">
-                    Client Name
+                    Image Title (Optional)
                 </label>
 
-                <input type="text" name="name" value="{{ $client->name }}" class="w-full rounded-xl border-gray-300">
+                <input type="text" name="title" value="{{ $gallery->title }}" class="w-full rounded-xl border-gray-300">
 
             </div>
 
             <div>
 
                 <label class="font-semibold block mb-2">
-                    Current Logo
+                    Current Image
                 </label>
 
-                <img src="{{ asset('storage/' . $client->logo) }}" class="w-48 rounded-xl mb-4">
+                <img src="{{ asset('storage/' . $gallery->image) }}" class="w-48 h-48 object-cover rounded-xl mb-4">
 
-                <input type="file" name="logo" class="w-full">
+                <input type="file" name="image" class="w-full">
 
             </div>
 
             <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl">
 
-                Update Client
+                Update Image
 
             </button>
 
