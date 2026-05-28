@@ -20,6 +20,7 @@ class AdminEventController extends Controller
         return view('admin.events.create');
     }
 
+
     public function store(Request $request)
     {
         $request->validate([

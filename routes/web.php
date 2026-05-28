@@ -12,11 +12,11 @@ use App\Http\Controllers\ClientController;
 // ADMIN CONTROLLERS
 
 
-use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminArticleController;
 use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminClientController;
+use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminGalleryController;
 
 // FRONTEND ROUTES
@@ -48,7 +48,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     // DASHBOARD
 
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])
         ->name('dashboard');
 
     // NEXT CRUD
