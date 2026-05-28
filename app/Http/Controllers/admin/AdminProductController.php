@@ -3,63 +3,80 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $products = Product::latest()->paginate(10);
+
+        return view('admin.products.index', compact('products'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('admin.products.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required|image',
+        ]);
+
+        $image = $request->file('image')
+            ->store('products', 'public');
+
+        Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $image,
+        ]);
+
+        return redirect('/admin/products')
+            ->with('success', 'Product created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function edit(Product $product)
     {
-        //
+        return view('admin.products.edit', compact('product'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        $data = [
+            'name' => $request->name,
+            'description' => $request->description,
+        ];
+
+        if ($request->hasFile('image')) {
+
+            $image = $request->file('image')
+                ->store('products', 'public');
+
+            $data['image'] = $image;
+        }
+
+        $product->update($data);
+
+        return redirect('/admin/products')
+            ->with('success', 'Product updated successfully');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy(Product $product)
     {
-        //
-    }
+        $product->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return back()
+            ->with('success', 'Product deleted successfully');
     }
 }
