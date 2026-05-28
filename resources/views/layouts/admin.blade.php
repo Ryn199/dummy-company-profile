@@ -17,7 +17,7 @@
     <div class="flex min-h-screen">
 
         {{-- SIDEBAR --}}
-        <aside class="w-72 bg-slate-900 text-white p-6">
+        <aside class="relative w-72 bg-slate-900 text-white p-6">
 
             <div class="mb-10">
 

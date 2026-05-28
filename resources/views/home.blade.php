@@ -276,7 +276,7 @@
 
                 <div>
                     <div class="rounded-3xl overflow-hidden aspect-[4/5] shadow-xl bg-gray-100">
-                        <img src="{{ asset('storage/image') }}" class="w-full h-full object-cover"
+                        <img src="{{ asset('images/companyphoto.jpeg') }}" class="w-full h-full object-cover"
                             alt="Industrial Operations"
                             onerror="this.parentElement.classList.add('flex','items-center','justify-center'); this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=\'text-gray-400 text-sm\'>Foto tidak tersedia</span>')">
                     </div>
@@ -331,25 +331,27 @@
     </section>
 
     {{-- GALLERY --}}
-    <section class="py-20 bg-white">
+    <section id="gallery" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
             <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
                 <div>
                     <span class="text-orange-500 text-sm font-semibold uppercase tracking-widest">Dokumentasi</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold mt-2 text-gray-900">Gallery</h2>
+                    <h2 class="text-3xl sm:text-4xl font-bold mt-2 text-gray-900">Foto Dokumentasi</h2>
                     <p class="text-gray-500 mt-1">Dokumentasi kegiatan dan proyek perusahaan.</p>
                 </div>
-                <a href="/event-gallery"
-                    class="text-sm text-orange-500 hover:text-orange-600 font-semibold transition whitespace-nowrap">
-                    Lihat Semua →
-                </a>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 @foreach ($galleries as $gallery)
-                    <div class="bg-gray-100 rounded-2xl aspect-square overflow-hidden hover:opacity-90 transition">
-                        {{-- Tambahkan <img> jika ada property image di model --}}
+                    <div
+                        class="bg-gray-100 rounded-2xl aspect-square overflow-hidden hover:opacity-90 transition flex items-center justify-center">
+                        @if (!empty($gallery->image))
+                            <img src="{{ asset('storage/' . $gallery->image) }}" alt="Gallery Image"
+                                class="w-full h-full object-cover">
+                        @else
+                            <span class="text-gray-400 text-xs">Tidak ada gambar</span>
+                        @endif
                     </div>
                 @endforeach
             </div>
@@ -359,24 +361,42 @@
 
     {{-- CLIENTS --}}
     <section class="py-20 bg-gray-50">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-            <div class="text-center mb-12">
-                <span class="text-orange-500 text-sm font-semibold uppercase tracking-widest">Dipercaya Oleh</span>
-                <h2 class="text-3xl sm:text-4xl font-bold mt-2 mb-3 text-gray-900">Our Clients</h2>
-                <p class="text-gray-500">Dipercaya oleh berbagai perusahaan industri terkemuka.</p>
+            <div class="text-center mb-14">
+
+                <span class="text-orange-500 text-sm font-semibold uppercase tracking-widest">
+                    Dipercaya oleh berbagai perusahaan industri terkemuka
+                </span>
+
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2 mb-3 text-gray-900">
+                    Our Clients
+                </h2>
+
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-10 gap-y-12 items-center">
+
                 @foreach ($clients as $client)
-                    <div
-                        class="bg-white rounded-2xl border border-gray-100 p-5 flex items-center justify-center h-24 hover:border-orange-200 hover:shadow-sm transition-all duration-200">
-                        <span class="font-bold text-sm text-gray-700 text-center">{{ $client->name }}</span>
+                    <div class="flex items-center justify-center">
+
+                        @if (!empty($client->logo))
+                            <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name }}"
+                                class="max-w-[140px] max-h-[70px] object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300">
+                        @else
+                            <span class="font-semibold text-gray-500 text-center">
+                                {{ $client->name }}
+                            </span>
+                        @endif
+
                     </div>
                 @endforeach
+
             </div>
 
         </div>
+
     </section>
 
     {{-- CONTACT --}}
@@ -406,7 +426,7 @@
                             </div>
                             <div>
                                 <p class="text-xs text-gray-500 uppercase tracking-wider">Email</p>
-                                <p class="text-gray-300 text-sm">info@nms-company.com</p>
+                                <p class="text-gray-300 text-sm">info@nms-companydummy.com</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-4 group">
@@ -436,7 +456,7 @@
                             </div>
                             <div>
                                 <p class="text-xs text-gray-500 uppercase tracking-wider">Alamat</p>
-                                <p class="text-gray-300 text-sm">Indonesia</p>
+                                <p class="text-gray-300 text-sm">Cikarang-Jawa barat-Indonesia</p>
                             </div>
                         </div>
                     </div>

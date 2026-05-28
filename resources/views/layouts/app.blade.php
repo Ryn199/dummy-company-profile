@@ -189,7 +189,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/foto-klien"
+                        <a href="/client"
                             class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-300 hover:text-white hover:bg-orange-500/20 transition-all text-sm font-medium">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -258,20 +258,20 @@
                 <a href="/#visi-misi"
                     class="px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition font-medium">Visi
                     Misi</a>
-                <a href="/#produk"
-                    class="px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition font-medium">Produk</a>
-                <a href="/#kontak"
-                    class="px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition font-medium">Kontak</a>
                 <a href="/#about"
                     class="px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition font-medium">About</a>
+                <a href="/#produk"
+                    class="px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition font-medium">Product</a>
+                <a href="/#gallery"
+                    class="px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition font-medium">Gallery</a>
+                <a href="/#kontak"
+                    class="px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition font-medium">Contact</a>
             </div>
 
             <!-- CTA Desktop -->
             <div class="hidden md:flex items-center gap-2">
                 <a href="/login"
-                    class="px-4 py-2 text-sm text-gray-300 hover:text-white transition font-medium">Masuk</a>
-                <a href="/register"
-                    class="px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition">Daftar</a>
+                    class="px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition">SignIn</a>
             </div>
 
         </div>
@@ -284,7 +284,7 @@
     <footer class="bg-gray-950 text-gray-500 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-sm">
             <span>© {{ date('Y') }} PT Nurman Mitra Sentosa. All rights reserved.</span>
-            <span>Design by <span class="text-orange-400 font-medium">Ridho Yudiana</span></span>
+            <span>Design by <span class="text-orange-400 font-medium">Muhammad Ridho Yudiana</span></span>
         </div>
     </footer>
 

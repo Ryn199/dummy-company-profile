@@ -1,13 +1,30 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Client;
 
-class DashboardController extends Controller
+class ClientController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        $clients = Client::latest()->paginate(6);
+
+        return view('clients.index', compact('clients'));
+    }
+
+    public function show($id)
+    {
+        $client = Client::findOrFail($id);
+
+        $latestClients = Client::latest()
+            ->where('id', '!=', $client->id)
+            ->take(5)
+            ->get();
+
+        return view('clients.show', compact(
+            'client',
+            'latestClients'
+        ));
     }
 }

@@ -38,7 +38,7 @@ Route::get('/event-gallery/{id}', [EventController::class, 'show']);
 // CLIENTS
 
 
-Route::get('/foto-klien', [ClientController::class, 'index']);
+Route::get('/client', [ClientController::class, 'index']);
 
 // ADMIN ROUTES
 
