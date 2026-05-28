@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nurman Mitra Sentosa</title>
+    <link rel="icon" type="image/png" href="{{ asset('logo/NMS.png') }}">
     <style>
         html {
             scroll-behavior: smooth;
@@ -58,8 +59,7 @@
 
         <!-- Header Sidebar -->
         <div class="flex items-center justify-between px-6 py-5 border-b border-white/10">
-            <img src="https://pt-nms.co.id/wp-content/uploads/2022/06/Logo-NMS-New-Home.png" alt="NMS Logo"
-                class="h-7 w-auto object-contain">
+            <img src="{{ asset('logo/NMS.png') }}" alt="NMS Logo" class="h-7 w-auto object-contain">
             <button id="closeSidebarBtn"
                 class="text-gray-400 hover:text-orange-400 transition p-1 rounded-lg hover:bg-white/10">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -195,7 +195,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Foto Klien
+                            Our Clients
                         </a>
                     </li>
                 </ul>
@@ -246,8 +246,8 @@
                     </svg>
                 </button>
                 <a href="/" class="flex items-center">
-                    <img src="https://pt-nms.co.id/wp-content/uploads/2022/06/Logo-NMS-New-Home.png"
-                        alt="Nurman Mitra Sentosa" class="h-8 w-auto object-contain">
+                    <img src="{{ asset('logo/NMS.png') }}" alt="Nurman Mitra Sentosa"
+                        class="h-8 w-auto object-contain">
                 </a>
             </div>
 
