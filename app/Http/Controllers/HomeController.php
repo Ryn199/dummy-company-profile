@@ -16,7 +16,7 @@ class HomeController extends Controller
             'articles' => Article::latest()->take(3)->get(),
             'products' => Product::all(),
             'events' => Event::latest()->take(3)->get(),
-            'galleries' => Gallery::latest()->take(6)->get(),
+            'galleries' => Gallery::latest()->take(3)->get(),
             'clients' => Client::latest()->take(5)->get(),
         ]);
     }
