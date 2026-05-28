@@ -33,33 +33,27 @@
 
             <nav class="space-y-3">
 
-                <a href="/admin/dashboard"
-                    class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
+                <a href="/admin/dashboard" class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
                     Dashboard
                 </a>
 
-                <a href="/admin/articles"
-                    class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
+                <a href="/admin/articles" class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
                     Articles
                 </a>
 
-                <a href="/admin/events"
-                    class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
+                <a href="/admin/events" class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
                     Events
                 </a>
 
-                <a href="/admin/products"
-                    class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
+                <a href="/admin/products" class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
                     Products
                 </a>
 
-                <a href="/admin/galleries"
-                    class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
+                <a href="/admin/galleries" class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
                     Galleries
                 </a>
 
-                <a href="/admin/clients"
-                    class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
+                <a href="/admin/clients" class="block px-4 py-3 rounded-xl hover:bg-slate-800 transition">
                     Clients
                 </a>
 
@@ -86,8 +80,7 @@
 
                         @csrf
 
-                        <button
-                            class="w-full bg-red-500 hover:bg-red-600 transition rounded-xl py-2">
+                        <button class="w-full bg-red-500 hover:bg-red-600 transition rounded-xl py-2">
 
                             Logout
 

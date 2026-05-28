@@ -11,10 +11,10 @@ class Event extends Model
 {
     use HasFactory;
 
-    protected function casts(): array
-    {
-        return [
-            'event_date' => 'date',
-        ];
-    }
+    protected $fillable = [
+        'title',
+        'description',
+        'event_date',
+        'image',
+    ];
 }

@@ -14,6 +14,8 @@ use App\Http\Controllers\ClientController;
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminArticleController;
+use App\Http\Controllers\Admin\AdminEventController;
+use App\Http\Controllers\Admin\AdminProductController;
 
 // FRONTEND ROUTES
 
@@ -52,8 +54,8 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     // nanti lanjut:
     Route::resource('articles', AdminArticleController::class);
-    // Route::resource('products', AdminProductController::class);
-    // Route::resource('events', AdminEventController::class);
+    Route::resource('products', AdminProductController::class);
+    Route::resource('events', AdminEventController::class);
     // Route::resource('clients', AdminClientController::class);
     // Route::resource('galleries', AdminGalleryController::class);
 
