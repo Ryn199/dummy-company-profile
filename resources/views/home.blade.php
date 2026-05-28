@@ -364,6 +364,7 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
+            {{-- HEADER --}}
             <div class="text-center mb-14">
 
                 <span class="text-orange-500 text-sm font-semibold uppercase tracking-widest">
@@ -374,8 +375,14 @@
                     Our Clients
                 </h2>
 
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    PT Nurman Mitra Sentosa telah bekerja sama dengan berbagai perusahaan dan industri
+                    dalam menyediakan solusi engineering, geothermal, dan industrial services.
+                </p>
+
             </div>
 
+            {{-- CLIENT LOGOS --}}
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-10 gap-y-12 items-center">
 
                 @foreach ($clients as $client)
@@ -383,7 +390,7 @@
 
                         @if (!empty($client->logo))
                             <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name }}"
-                                class="max-w-[140px] max-h-[70px] object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300">
+                                class="max-w-[140px] max-h-[70px] object-contain opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300 ease-in-out">
                         @else
                             <span class="font-semibold text-gray-500 text-center">
                                 {{ $client->name }}
