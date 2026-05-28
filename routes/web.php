@@ -13,6 +13,7 @@ use App\Http\Controllers\ClientController;
 
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AdminArticleController;
 
 // FRONTEND ROUTES
 
@@ -50,7 +51,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 
     // nanti lanjut:
-    // Route::resource('articles', AdminArticleController::class);
+    Route::resource('articles', AdminArticleController::class);
     // Route::resource('products', AdminProductController::class);
     // Route::resource('events', AdminEventController::class);
     // Route::resource('clients', AdminClientController::class);
